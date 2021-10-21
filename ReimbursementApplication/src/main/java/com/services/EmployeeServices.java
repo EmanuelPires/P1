@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import com.dao.ReimbursementDaoDB;
+import com.dao.ReimbursmentDao;
 import com.exceptions.UserDoesNotExist;
 import com.logging.Logging;
 import com.models.Employees;
@@ -11,8 +12,13 @@ import com.models.Reimbursement;
 
 public class EmployeeServices {
 	
+	private ReimbursmentDao reimDao;
 	
-	ReimbursementDaoDB reimDao = new ReimbursementDaoDB();
+	public EmployeeServices(ReimbursmentDao r) {
+		this.reimDao = r;
+	}
+	
+	
 	
 	public Employees signIn(String email, String password) throws UserDoesNotExist{
 		

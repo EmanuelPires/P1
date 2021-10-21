@@ -14,4 +14,6 @@ public interface ReimbursmentDao {
 	
 	List<Reimbursement> getAllReimbursements() throws SQLException;
 	
+	Employees getEmpInfo(String email);
+	
 }
